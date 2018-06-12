@@ -1,7 +1,7 @@
 version: "0.1.0"
 pre_ci_boot:
-    image: index.alauda.cn/alaudaci/openjdk
-    tag: oracle18
+    image: index.alauda.cn/alaudaci/u14java 
+    tag: oraclejdk8
 ci:
     - cp -r . /app/ && cd /app
     - make package
