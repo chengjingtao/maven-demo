@@ -1,14 +1,10 @@
 version: "0.1.0"
 pre_ci_boot:
-    image: index.alauda.cn/alaudaorg/gobuild
-    tag: 1.9-alpine
+    image: index.alauda.cn/alaudaci/openjdk
+    tag: oracle18
 ci:
-    - cp -r . $GOPATH/src/titan/ && cd $GOPATH/src/titan
+    - cp -r . /app/ && cd /app
     - make package
-    - cd $GOPATH/src/
-    - cp titan/Dockerfile.ci $ALAUDACI_DEST_DIR/Dockerfile
-    - cp titan/*.sh $ALAUDACI_DEST_DIR/
-    - cp titan/*.py $ALAUDACI_DEST_DIR/
-    - mkdir -p $ALAUDACI_DEST_DIR/titan/config
-    - cp -r titan/config/service $ALAUDACI_DEST_DIR/titan/config/
-    - cp -r titan/migrations $ALAUDACI_DEST_DIR/titan
+    - cp ./Dockerfile $ALAUDACI_DEST_DIR/Dockerfile
+    - mkdir -p $ALAUDACI_DEST_DIR/target
+    - cp -r ./target/demo-0.0.1-SNAPSHOT.jar $ALAUDACI_DEST_DIR/target/
