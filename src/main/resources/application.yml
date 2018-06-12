@@ -1,0 +1,17 @@
+server:
+  context-path: /demo
+
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    ROOT: INFO
+#  file: /var/log/tsf/demo/demo.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+demo:
+  value: ${MY_DEMO:Haitao}
