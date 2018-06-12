@@ -26,7 +26,7 @@ public class CustomController {
             return "custom=" + my_var + ":" + demo;
         }
         else {
-            return "Hello World!";
+            return "Hello World, RD !";
         }
     }
 }
